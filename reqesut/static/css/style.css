@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0;
+}
+
+#requests {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#requests div {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#requests button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    
+}
+
+#requests button.approve {
+    background-color: #4CAF50;
+}
+
+#requests button.reject {
+    background-color: #f44336;
+}
+
+#requests div:last-child {
+    border-bottom: none;
+}
+
+/* ボタンコンテナのスタイル */
+.button-container {
+    display: flex;
+    flex-direction: column; /* ボタンを縦に配置 */
+    align-items: center; /* ボタンを中央揃え */
+    margin-top: 10px; /* ボタンコンテナの上側のマージン */
+}
+
+/* 承認ボタンのスタイル */
+.approve-button {
+    background-color: #4CAF50; /* 承認ボタンの背景色 */
+    color: white; /* ボタンのテキスト色 */
+    padding: 10px 20px; /* ボタンの内側の余白 */
+    border: none; /* ボタンの境界線をなくす */
+    cursor: pointer; /* マウスカーソルをポインターに変更 */
+    margin-bottom: 10px; /* ボタン間の下側のマージン */
+}
+
+/* 拒否ボタンのスタイル */
+.reject-button {
+    background-color: #f44336; /* 拒否ボタンの背景色 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.table-container {
+    text-align: center; /* テキストを中央揃えにする */
+    margin: 0 auto; /* 左右の余白を自動調整して中央に配置する */
+    display: flex;
+}
+
+td {
+    text-align: center;
+}
