@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Management</title>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+
+    <script src="./js/scriptf.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+    <h1>ワード追加リクエスト</h1>
+    <!-- ソートボタンを追加 -->
+    <button onclick="sortRequests('ascending')">昇順</button>
+    <button onclick="sortRequests('descending')">降順</button>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Read</th>
+                    <th>Count</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="requests"></tbody>
+        </table>
+    </div>
+    
+    <div id="other-content"></div>
+</body>
+</html>

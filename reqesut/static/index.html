@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Counts</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .count {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #555;
+            padding-bottom: 10px;
+        }
+
+        .count span {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        a {
+            background-color: #007bff; /* リンクの背景色 */
+            color: white; /* テキストの色 */
+            padding: 10px 15px; /* 内側の余白 */
+            border-radius: 5px; /* 角の丸み */
+            text-decoration: none; /* 下線を消去 */
+            font-weight: bold; /* フォントを太く */
+            margin-right: 10px; /* 右側の余白 */
+            transition: background-color 0.3s; /* 背景色の変化を滑らかに */
+        }
+        
+        a:hover {background-color: #0056b3; /* ホバー時の背景色 */
+        }
+            
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>リクエスト管理メニュー</h1>
+        
+        <div class="count">
+            <a href="/static/add-requests.html">追加リクエスト</a>
+            Count: <span id="add-count">Loading...</span>
+        </div>
+        <div class="count">
+            <a href="/static/remove-requests.html">削除リクエスト</a>
+            Count: <span id="remove-count">Loading...</span>
+        </div>
+
+        <a href="/static/check-word.html">ワード検索</a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $.get('/api/requests/count/add', function(data) {
+                $('#add-count').text(data.count);
+            });
+
+            $.get('/api/requests/count/remove', function(data) {
+                $('#remove-count').text(data.count);
+            });
+        });
+    </script>
+</body>
+</html>
